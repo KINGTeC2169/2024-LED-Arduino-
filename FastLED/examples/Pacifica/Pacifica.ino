@@ -13,7 +13,7 @@
 #include <FastLED.h>
 FASTLED_USING_NAMESPACE
 
-#define DATA_PIN            0
+#define DATA_PIN            2
 #define NUM_LEDS            60
 #define MAX_POWER_MILLIAMPS 500
 #define LED_TYPE            WS2812B
