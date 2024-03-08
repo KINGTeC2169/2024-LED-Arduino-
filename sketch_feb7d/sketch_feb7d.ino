@@ -5,7 +5,7 @@
 #define NUM_LEDS 60
 
 #define DATA_PIN 2 
-#define BRIGHTNESS 30
+#define BRIGHTNESS 100
 
 CRGB leds[NUM_LEDS];
 int dat = 0;
@@ -29,11 +29,12 @@ void loop() {
     dat = Serial.read();
 
   
-  Serial.println(dat + "TURN OFF LEDS"); 
+   
 
    //Turn the LED on, then pauses, rainbow ripple effect
 
   if (dat == 65){
+    
     int break_the_loop = 0;
     r = middle;
     for (int i = NUM_LEDS; i >= 0; i--){
@@ -154,8 +155,18 @@ void loop() {
       r++;
     }
   }
+   if (dat == 69) {
+    r = middle;
+    for (int i = middle ; i >= 0; i--){
+      leds[i] = CRGB::Orange;
+      leds[r] = CRGB::Orange;
 
-  if (dat == 69) {
+      FastLED.show();
+      r++;
+    }
+  }
+
+  if (dat == 70) {
     r = middle;
     for (int i = middle ; i >= 0; i--){
       leds[i] = CRGB::Black;
